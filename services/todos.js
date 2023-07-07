@@ -29,6 +29,7 @@ const createNewTodo = async (userId, category, requirement) => {
     return {
       status: 200,
       message: messages.toDos.createSuccess,
+      todo,
     };
   } catch (err) {
     return {
