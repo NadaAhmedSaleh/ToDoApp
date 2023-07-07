@@ -27,5 +27,12 @@ const messages = {
     userNotExistsErr: (field) => `User with this ${field} doesn\'t exist!`,
     passwordUpdatedSuccess: "Password updated successfully try to login.",
   },
+  toDos: {
+    unauthorized: "You are unauthorized to perform this action",
+    createSuccess: "Todo created successfully.",
+    updateSuccess: "Todo updated successfully.",
+    notFoundErr: "Todo not found!",
+    alreadyDoneErr: "Todo is already done!",
+  },
 };
 export default messages;

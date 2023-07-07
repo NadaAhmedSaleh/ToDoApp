@@ -9,11 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^7.3.2",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.9",
+    "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
-    "mongoose-paginate-v2": "^1.7.1"
-  }
+    "mongoose": "^7.3.2",
+    "mongoose-paginate-v2": "^1.7.1",
+    "rand-token": "^1.0.1"
+  },
+  "type": "module"
 }
