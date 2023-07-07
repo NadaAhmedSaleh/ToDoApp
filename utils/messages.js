@@ -33,6 +33,7 @@ const messages = {
     updateSuccess: "Todo updated successfully.",
     notFoundErr: "Todo not found!",
     alreadyDoneErr: "Todo is already done!",
+    deleteSuccess: "Todo deleted successfully.",
   },
 };
 export default messages;

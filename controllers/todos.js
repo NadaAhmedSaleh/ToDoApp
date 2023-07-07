@@ -32,4 +32,18 @@ const markDone = async (req, res) => {
   res.status(status).send(data);
 };
 //------------------------------------------------------------------------------
-export { addTodo, updateTodo, markDone };
+const getById = async (req, res) => {
+  const userId = req.user.id;
+  const { id } = req.params;
+  const { status, ...data } = await toDosService.getById(userId, id);
+  res.status(status).send(data);
+};
+//------------------------------------------------------------------------------
+const deleteById = async (req, res) => {
+  const userId = req.user.id;
+  const { id } = req.params;
+  const { status, ...data } = await toDosService.deleteById(userId, id);
+  res.status(status).send(data);
+};
+//------------------------------------------------------------------------------
+export { addTodo, updateTodo, markDone, getById, deleteById };

@@ -111,4 +111,48 @@ const markDone = async (userId, todoId) => {
   }
 };
 //------------------------------------------------------------------------------
-export { createNewTodo, updateTodo, markDone };
+const getById = async (userId, todoId) => {
+  const todo = await Todo.findOne({ _id: todoId, userId }).lean();
+  if (!todo) {
+    return {
+      status: 404,
+      message: messages.toDos.notFoundErr,
+    };
+  }
+
+  return {
+    status: 200,
+    todo,
+  };
+};
+//------------------------------------------------------------------------------
+const deleteById = async (userId, todoId) => {
+  const todo = await Todo.findById(todoId).lean();
+  if (!todo) {
+    return {
+      status: 404,
+      message: messages.toDos.notFoundErr,
+    };
+  }
+  if (!equalIds(userId, todo.userId)) {
+    return {
+      status: 400,
+      message: messages.toDos.unauthorized,
+    };
+  }
+
+  try {
+    await Todo.deleteOne({ _id: todoId });
+    return {
+      status: 200,
+      message: messages.toDos.deleteSuccess,
+    };
+  } catch (err) {
+    return {
+      status: 400,
+      message: err.message,
+    };
+  }
+};
+//------------------------------------------------------------------------------
+export { createNewTodo, updateTodo, markDone, getById, deleteById };
