@@ -155,4 +155,12 @@ const deleteById = async (userId, todoId) => {
   }
 };
 //------------------------------------------------------------------------------
-export { createNewTodo, updateTodo, markDone, getById, deleteById };
+const getAll = async (userId) => {
+  const todos = await Todo.find({ userId }).lean();
+  return {
+    status: 200,
+    todos,
+  };
+};
+//------------------------------------------------------------------------------
+export { createNewTodo, updateTodo, markDone, getById, deleteById, getAll };

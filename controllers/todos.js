@@ -46,4 +46,10 @@ const deleteById = async (req, res) => {
   res.status(status).send(data);
 };
 //------------------------------------------------------------------------------
-export { addTodo, updateTodo, markDone, getById, deleteById };
+const getAll = async (req, res) => {
+  const userId = req.user.id;
+  const { status, ...data } = await toDosService.getAll(userId);
+  res.status(status).send(data);
+};
+//------------------------------------------------------------------------------
+export { addTodo, updateTodo, markDone, getById, deleteById, getAll };
