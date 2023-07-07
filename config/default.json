@@ -1,0 +1,10 @@
+{
+    "timers": {
+        "tokenLifeSpan": "24h"
+    },
+    "paginationLimit": 10,
+    "paginationStart": 1,
+    "user": {
+        "tokenValidationLength": 16
+    }
+}

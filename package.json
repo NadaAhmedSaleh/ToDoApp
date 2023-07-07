@@ -1,0 +1,19 @@
+{
+  "name": "todoappnada",
+  "version": "1.0.0",
+  "description": "A node js app to manage user's todo lists.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.3.2",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.9",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose-paginate-v2": "^1.7.1"
+  }
+}
